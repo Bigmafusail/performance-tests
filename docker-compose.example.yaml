@@ -1,0 +1,10 @@
+version: '5.1'
+
+services:
+  script:
+    build:
+      context:  .
+      dockerfile: Dockerfile.compose-example
+
+  redis:
+    image:  redis:alpine
