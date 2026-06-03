@@ -134,59 +134,59 @@ class OperationsGatewayHTTPClient(HTTPClient):
         return GetOperationReceiptResponseSchema.model_validate_json(response.text)
 
     def get_operations(self, account_id: str) -> GetOperationsResponseSchema:
-        query = GetOperationsQuerySchema(accountId=account_id)
+        query = GetOperationsQuerySchema(account_id=account_id)
         response = self.get_operations_api(query)
         return GetOperationsResponseSchema.model_validate_json(response.text)
 
     def get_operations_summary(self, account_id: str) -> GetOperationsSummaryResponseSchema:
-        query = GetOperationsSummaryQuerySchema(accountId=account_id)
+        query = GetOperationsSummaryQuerySchema(account_id=account_id)
         response = self.get_operations_summary_api(query)
         return GetOperationsSummaryResponseSchema.model_validate_json(response.text)
 
     def make_fee_operation(self, card_id: str, account_id: str) -> MakeFeeOperationResponseSchema:
         request = MakeFeeOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_fee_operation_api(request)
         return MakeFeeOperationResponseSchema.model_validate_json(response.text)
 
     def make_top_up_operation(self, card_id: str, account_id: str) -> MakeTopUpOperationResponseSchema:
         request = MakeTopUpOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_top_up_operation_api(request)
         return MakeTopUpOperationResponseSchema.model_validate_json(response.text)
 
     def make_cashback_operation(self, card_id: str, account_id: str) -> MakeCashbackOperationResponseSchema:
         request = MakeCashbackOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_cashback_operation_api(request)
         return MakeCashbackOperationResponseSchema.model_validate_json(response.text)
 
     def make_transfer_operation(self, card_id: str, account_id: str) -> MakeTransferOperationResponseSchema:
         request = MakeTransferOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_transfer_operation_api(request)
         return MakeTransferOperationResponseSchema.model_validate_json(response.text)
 
     def make_purchase_operation(self, card_id: str, account_id: str) -> MakePurchaseOperationResponseSchema:
         request = MakePurchaseOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_purchase_operation_api(request)
         return MakePurchaseOperationResponseSchema.model_validate_json(response.text)
 
     def make_bill_payment_operation(self, card_id: str, account_id: str) -> MakeBillPaymentOperationResponseSchema:
         request = MakeBillPaymentOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_bill_payment_operation_api(request)
         return MakeBillPaymentOperationResponseSchema.model_validate_json(response.text)
@@ -194,8 +194,8 @@ class OperationsGatewayHTTPClient(HTTPClient):
     def make_cash_withdrawal_operation(self, card_id: str,
                                        account_id: str) -> MakeCashWithdrawalOperationResponseSchema:
         request = MakeCashWithdrawalOperationRequestSchema(
-            cardId=card_id,
-            accountId=account_id
+            card_id=card_id,
+            account_id=account_id
         )
         response = self.make_cash_withdrawal_operation_api(request)
         return MakeCashWithdrawalOperationResponseSchema.model_validate_json(response.text)
