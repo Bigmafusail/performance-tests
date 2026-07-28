@@ -55,8 +55,8 @@ class GetDocumentsSequentialTaskSet(GatewayGRPCSequentialTaskSet):
         )
 
 
-class GetDocumentsScenarioUser(LocustBaseUser):  # Наследуем от базового класса
+class GetDocumentsScenarioUser(LocustBaseUser):
     """
     Пользователь Locust, исполняющий последовательный сценарий получения документов.
     """
-    tasks = [GetDocumentsSequentialTaskSet]  
+    tasks = [GetDocumentsSequentialTaskSet]
