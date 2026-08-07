@@ -24,7 +24,7 @@ from contracts.services.gateway.operations.rpc_make_bill_payment_operation_pb2 i
     MakeBillPaymentOperationResponse
 from contracts.services.gateway.operations.rpc_make_cash_withdrawal_operation_pb2 import \
     MakeCashWithdrawalOperationRequest, MakeCashWithdrawalOperationResponse
-from contracts.services.operations.operation_pb2 import OperationStatus, OperationType
+from contracts.services.operations.operation_pb2 import OperationStatus
 from tools.fakers import fake
 
 
@@ -260,7 +260,7 @@ class OperationsGatewayGRPCClient(GRPCClient):
             status=fake.proto_enum(OperationStatus),
             amount=fake.amount(),
             card_id=card_id,
-            category=fake.proto_enum(OperationType),
+            category=fake.category(),
             account_id=account_id
         )
         return self.make_purchase_operation_api(request)
