@@ -200,7 +200,7 @@ class SeedsBuilder:
             ],
             virtual_cards=[
                 self.build_virtual_card_result(user_id=user_id, account_id=response.account.id)
-                for _ in range(plan.physical_cards.count)
+                for _ in range(plan.virtual_cards.count)
             ],
             top_up_operations=[
                 self.build_top_up_operation_result(card_id=card_id, account_id=account_id)
@@ -244,7 +244,7 @@ class SeedsBuilder:
             account_id=response.account.id,
             physical_cards=[
                 self.build_physical_card_result(user_id=user_id, account_id=account_id)
-                for _ in range(plan.virtual_cards.count)
+                for _ in range(plan.physical_cards.count)
             ],
             virtual_cards=[
                 self.build_virtual_card_result(user_id=user_id, account_id=account_id)
