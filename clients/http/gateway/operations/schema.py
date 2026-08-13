@@ -19,10 +19,10 @@ class OperationType(StrEnum):
 
 class OperationStatus(StrEnum):
     """Статусы операций."""
-    COMPLETED = "COMPLETED"
-    PENDING = "PENDING"
     FAILED = "FAILED"
-    CANCELLED = "CANCELLED"
+    COMPLETED = "COMPLETED"
+    IN_PROGRESS = "IN_PROGRESS"
+    UNSPECIFIED = "UNSPECIFIED"
 
 class OperationSchema(BaseModel):
     """
